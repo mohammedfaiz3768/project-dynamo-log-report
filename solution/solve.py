@@ -21,6 +21,8 @@ with open("/app/report.json", "w") as out:
             "unique_ips": len(ips),
             "top_path": paths.most_common(1)[0][0],
         },
+
+
         out,
     )
 print("wrote /app/report.json")

@@ -3,7 +3,7 @@
 mkdir -p /logs/verifier
 
 # pytest is baked into the environment image (environment/Dockerfile).
-pytest /tests/test_outputs.py -rA --json-ctrf /logs/verifier/ctrf.json
+pytest /tests/test_outputs.py -rA --ctrf /logs/verifier/ctrf.json
 rc=$?
 
 if [ $rc -eq 0 ]; then
@@ -11,3 +11,4 @@ if [ $rc -eq 0 ]; then
 else
   echo 0 > /logs/verifier/reward.txt
 fi
+
